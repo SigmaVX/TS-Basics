@@ -1,4 +1,7 @@
+// Aliase - Union Type
 type NumString = number | string;
+
+// Aliase - Literal Type
 type comboTypes = "as-number" | "as-text";
 
 const combine = (input1: NumString, input2: NumString, resultType: comboTypes) => {
