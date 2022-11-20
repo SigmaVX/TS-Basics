@@ -1,21 +1,15 @@
 {
-  "name": "ts-basics",
+  "name": "understanding-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "app.js",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
   },
-  "dependencies": {
-    "light-server": "2.9.1",
-    "parcel-bundler": "^1.6.1"
-  },
+  "author": "Maximilian Schwarzmüller",
+  "license": "ISC",
   "devDependencies": {
-    "typescript": "4.4.4"
-  },
-  "resolutions": {
-    "@babel/preset-env": "7.13.8"
-  },
-  "keywords": []
+    "lite-server": "^2.5.4"
+  }
 }
