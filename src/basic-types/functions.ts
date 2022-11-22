@@ -9,7 +9,6 @@ const addResult = (num: number): void => {
 };
 addResult(addExplicit(10, 2));
 
-
 // Function Type
 let combineValues: (a: number, b: number) => number;
 
