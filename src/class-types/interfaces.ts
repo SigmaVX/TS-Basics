@@ -1,16 +1,17 @@
-// Interface
+// Interface - Required Class Properties
 interface Named {
     readonly name: string;
-    // Optional Property
+    // Optional Property Using ?
     outputName?: string;
 }
 
 // Extending Interface
 interface Greetable extends Named {
+    // Requiring A Method
     greet(phrase: string): void;
 }
 
-// Function Interface
+// Function Interface - Rarely Used
 interface AddFn {
     (n1: number, n2: number):number;
 }
@@ -18,6 +19,7 @@ interface AddFn {
 // Using Interface
 class Person implements Greetable {
     name:string;
+    // Optional Property
     age?: number;
     // Optional Param In Constructor
     constructor(name:string, age?:number) {

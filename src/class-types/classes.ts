@@ -24,13 +24,13 @@ class Department {
     }
 }
 
-// Abstract Class - Force Abstract Methods
+// Abstract Class - Forces Classes To Have Abstract Methods
 abstract class DepartmentAlt {
     static fiscalYear = 2020;
     private employees: string[] = [];
     // Constructor Shorcut For Properties
     constructor (readonly id: string, public name: string) {}
-    // Abstract Method
+    // Abstract Method - Require Each Class To Have This Function
     abstract describe(this: DepartmentAlt): void;
     // Static Method
     static createEmployee(name:string){
@@ -45,16 +45,17 @@ abstract class DepartmentAlt {
     }
 }
 
-// Inheritence
+// Inheritence - Extending Class
 class ItDepartment extends DepartmentAlt {
     admins: string[];
     constructor(id: string, admins: string[]){
-        super(id, "IT");
+        // Super  To Run Base Class Constructor
+        super(id, "Tech Dept");
         this.admins = admins;
     }
-    // Used For Abstract Method
+    // Used To Comply With Abstract Method
     describe() {
-        console.log("IT Dept ID: ", this.id);
+        console.log("Tech Dept ID: ", this.id);
     }
 }
 
@@ -79,9 +80,8 @@ class AccountingDepartment extends Department {
     // Singleton - Assure Only One Instance
     // private constructor(id: string, private reports: string[]){
     constructor(id: string, private reports: string[]){
-        super(id, "Accounting Two");
+        super(id, "Accounting Alt");
         this.lastReport = reports[0];
-
     }
     // Singleton - Assure Only One Instance
     // static getInstance(){
@@ -95,11 +95,11 @@ class AccountingDepartment extends Department {
     describe(): void {
         console.log("Accounting Dept Empolyees: ", this.employees);
     }
-    addReport(text:string){
+    addReport(text:string): void{
         this.reports.push(text);
         this.lastReport = text;
     }
-    getReports(){
+    getReports(): void{
         console.log("Reports: ", this.reports);
     }
     addEmployee(name: string): void {
